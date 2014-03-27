@@ -1,6 +1,6 @@
 import sbt._
-import Keys._
-import PlayProject._
+import sbt.Keys._
+import play.Project._
 import com.gu.SbtJasminePlugin._
 
 object ApplicationBuild extends Build {
@@ -12,7 +12,7 @@ object ApplicationBuild extends Build {
       // Add your project dependencies here,
     )
 
-    val main = PlayProject(appName, appVersion, appDependencies, mainLang = SCALA)
+    val main = play.Project(appName, appVersion, appDependencies)
       .settings(jasmineSettings : _*)  //this adds jasmine settings from the sbt-jasmine plugin into the project
       .settings(
       // Add your own project settings here
